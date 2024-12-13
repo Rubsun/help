@@ -66,12 +66,10 @@ async def retry(callback: CallbackQuery):
         await callback.message.answer("Не удалось определить последний выбор. Попробуйте снова.")
         return
 
-    # Генерация нового рекомендации
     recommendation = get_random_recommendation(category, option, user_id)
     user_data[user_id]["last_recommendation"] = recommendation
     logger.log_info(f"New recommendation for user {user_id}: {recommendation}")
 
-    # Отправляем ответ пользователю
     await callback.message.answer(
         f"{recommendation}\nДобавить в список или подобрать другой?",
         reply_markup=additional_options_kb
