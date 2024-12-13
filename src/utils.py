@@ -14,7 +14,7 @@ def get_random_recommendation(category, option, user_id):
         firm = random.choice(available_firms)
         shade = THREADS[firm][option]
         user_data[user_id]['last_firm'] = firm
-        return f"Рекомендуем фирму {firm}, цвет {option}, оттенок {shade}."
+        return f"Фирма {firm}, цвет {option}, оттенок {shade}."
 
     elif category == "Иголки":
         if 'last_firm' in user_data[user_id]:
@@ -25,7 +25,7 @@ def get_random_recommendation(category, option, user_id):
         firm = random.choice(available_firms)
         size = NEEDLES[firm][option]
         user_data[user_id]['last_firm'] = firm
-        return f"Рекомендуем фирму {firm}, толщина {option}, размер {size}."
+        return f"Фирма {firm}, толщина {option}, размер {size}."
 
     elif category == "Канва":
         if 'last_firm' in user_data[user_id]:
@@ -36,4 +36,4 @@ def get_random_recommendation(category, option, user_id):
         firm = random.choice(available_firms)
         scale = CANVAS[firm][option]
         user_data[user_id]['last_firm'] = firm
-        return f"Рекомендуем фирму {firm}, масштаб {option}: {scale}."
+        return f"Фирма {firm}, масштаб {option}: {scale}."
